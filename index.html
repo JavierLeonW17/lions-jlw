@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lion's JLW · Estampado DTF y sublimación en Bogotá</title>
+<meta name="description" content="Camisetas, mugs, termos y regalos personalizados con estampado DTF y sublimación. Bogotá, envíos a toda Colombia. WhatsApp 316 498 9636.">
+<meta property="og:title" content="Lion's JLW · Personalizamos lo que imagines">
+<meta property="og:description" content="Camisetas, mugs, termos y regalos personalizados. Bogotá · Envíos a toda Colombia.">
+<meta property="og:image" content="recursos/compartir.png">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="recursos/favicon.png">
+<style>
+:root { --azul: #006cfe; --negro: #000; --gris: #f3f6fb; --borde: #e3e8f0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif; color: #111; background: #fff; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1150px; margin: 0 auto; padding: 0 20px; }
+.titulo { font-family: "Arial Black", "Segoe UI Black", Impact, sans-serif; text-transform: uppercase; }
+
+/* Barra superior */
+nav { position: sticky; top: 0; z-index: 10; background: rgba(0,0,0,.92); backdrop-filter: blur(8px); }
+nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+nav img { height: 44px; }
+nav .links { display: flex; gap: 22px; align-items: center; color: #fff; font-weight: 600; font-size: 15px; }
+nav .links a:hover { color: #8fb6ff; }
+.btn { display: inline-flex; align-items: center; gap: 8px; background: var(--azul); color: #fff; font-weight: 700; padding: 11px 20px; border-radius: 40px; transition: transform .15s, background .15s; }
+.btn:hover { background: #0057cc; transform: translateY(-1px); }
+.btn svg { width: 18px; height: 18px; fill: #fff; }
+
+/* Portada */
+.hero { background: radial-gradient(circle at 50% 35%, #0a3d9e 0%, #04173d 40%, #000 75%); color: #fff; text-align: center; padding: 60px 0 70px; }
+.hero .kicker { letter-spacing: 5px; font-weight: 700; color: #8fb6ff; font-size: 13px; }
+.hero img { width: 230px; max-width: 60%; margin: 26px auto 18px; display: block; }
+.hero h1 { font-size: clamp(30px, 6vw, 58px); line-height: 1.05; }
+.hero h1 span { color: var(--azul); }
+.hero p { color: #cfd8ea; font-size: 18px; margin: 18px auto 28px; max-width: 560px; }
+.hero .acciones { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn.borde { background: transparent; border: 2px solid var(--azul); }
+.btn.borde:hover { background: rgba(0,108,254,.15); }
+.chips { margin-top: 30px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.chips span { border: 1px solid rgba(143,182,255,.45); border-radius: 30px; padding: 6px 14px; font-size: 14px; color: #cfd8ea; }
+
+/* Productos */
+#productos { padding: 50px 0 20px; }
+.filtros { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 36px; position: sticky; top: 64px; background: #fff; padding: 12px 0; z-index: 5; }
+.filtro { border: 2px solid #000; background: #fff; font: inherit; font-weight: 700; padding: 8px 18px; border-radius: 30px; cursor: pointer; }
+.filtro.activo, .filtro:hover { background: #000; color: #fff; }
+.categoria { margin-bottom: 46px; }
+.cat-head { background: #000; color: #fff; border-left: 8px solid var(--azul); border-radius: 14px; padding: 20px 26px; margin-bottom: 22px; }
+.cat-head h2 { font-family: "Arial Black", "Segoe UI Black", Impact, sans-serif; text-transform: uppercase; font-size: 26px; }
+.cat-head p { color: #8fb6ff; margin-top: 4px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+.card { border: 1px solid var(--borde); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .2s, transform .2s; background: #fff; }
+.card:hover { box-shadow: 0 12px 30px rgba(0,40,120,.13); transform: translateY(-3px); }
+.foto { background: var(--gris); aspect-ratio: 1 / 1; position: relative; display: flex; align-items: center; justify-content: center; padding: 22px; }
+.foto img { max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply; }
+.foto .dibujo { width: 85%; height: 85%; }
+.tec { position: absolute; top: 12px; left: 12px; font-size: 11px; font-weight: 700; color: #fff; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: .5px; }
+.tec.dtf { background: #000; } .tec.sub { background: var(--azul); }
+.info { padding: 16px 18px 18px; display: flex; flex-direction: column; flex: 1; }
+.info h3 { font-size: 17px; line-height: 1.25; }
+.info .det { color: #5b6578; font-size: 14px; margin-top: 4px; }
+.info .precio { font-family: "Arial Black", "Segoe UI Black", Impact, sans-serif; color: var(--azul); font-size: 28px; margin-top: auto; padding-top: 14px; }
+.info .mayor { font-size: 13px; color: #333; }
+.btn-pedir { margin-top: 14px; text-align: center; background: #000; color: #fff; font-weight: 700; padding: 10px; border-radius: 10px; font-size: 14px; }
+.btn-pedir:hover { background: var(--azul); }
+
+/* Cómo pedir */
+#pedido { background: radial-gradient(circle at 50% 0%, #0a3d9e 0%, #04173d 45%, #000 80%); color: #fff; padding: 64px 0; text-align: center; }
+#pedido h2 { font-size: clamp(26px, 4vw, 38px); }
+.pasos { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin: 34px 0; text-align: left; }
+.paso { background: rgba(255,255,255,.06); border: 1px solid rgba(143,182,255,.35); border-radius: 16px; padding: 22px; }
+.paso b { display: inline-flex; width: 40px; height: 40px; border-radius: 50%; background: var(--azul); align-items: center; justify-content: center; font-size: 20px; margin-bottom: 12px; }
+.paso h3 { font-size: 18px; }
+.paso p { color: #cfd8ea; margin-top: 6px; }
+.notas { color: #9aa6bd; font-size: 13px; max-width: 760px; margin: 26px auto 0; line-height: 1.6; }
+
+footer { background: #000; color: #9aa6bd; padding: 30px 0; font-size: 14px; border-top: 1px solid #1c2333; }
+footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+footer img { height: 50px; }
+footer .redes { display: flex; gap: 18px; color: #fff; font-weight: 600; }
+footer .redes a:hover { color: #8fb6ff; }
+
+/* Botón flotante WhatsApp */
+.flotante { position: fixed; right: 20px; bottom: 20px; width: 60px; height: 60px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(0,0,0,.3); z-index: 20; }
+.flotante svg { width: 32px; height: 32px; fill: #fff; }
+
+@media (max-width: 700px) {
+  nav .links a:not(.btn) { display: none; }
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .foto { padding: 12px; }
+  .info { padding: 12px; }
+  .info h3 { font-size: 15px; }
+  .info .precio { font-size: 21px; }
+  .btn-pedir { font-size: 13px; padding: 9px 4px; }
+  .filtros { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; }
+  .filtro { flex: none; }
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a href="#"><img src="recursos/logo-blanco.png" alt="Lion's JLW"></a>
+  <div class="links">
+    <a href="#productos">Productos</a>
+    <a href="#pedido">Cómo pedir</a>
+    <a class="btn" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%20un%20producto%20personalizado" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3 29l6.5-2c1.9 1 4.1 1.6 6.5 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.3c-2.1 0-4.1-.6-5.8-1.7l-.4-.3-3.9 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.8-1.9-5.9C4.9 9.8 9.9 5 16 5s11.1 4.8 11.1 10.8S22.1 26.3 16 26.3zm6.1-8.1c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.5 0-.6l-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5.1 3.5 1.4 3.5.9 4.1.9.6-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/></svg> 316 498 9636</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="kicker">ESTAMPADO PERSONALIZADO · BOGOTÁ</div>
+  <img src="recursos/logo-blanco.png" alt="Lion's JLW">
+  <h1 class="titulo">Personalizamos<br><span>lo que imagines</span></h1>
+  <p>Camisetas, mugs, termos y regalos con tu logo, foto o diseño. Envíos a toda Colombia.</p>
+  <div class="acciones">
+    <a class="btn" href="#productos">Ver productos</a>
+    <a class="btn borde" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%20un%20producto%20personalizado" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3 29l6.5-2c1.9 1 4.1 1.6 6.5 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.3c-2.1 0-4.1-.6-5.8-1.7l-.4-.3-3.9 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.8-1.9-5.9C4.9 9.8 9.9 5 16 5s11.1 4.8 11.1 10.8S22.1 26.3 16 26.3zm6.1-8.1c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.5 0-.6l-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5.1 3.5 1.4 3.5.9 4.1.9.6-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/></svg> Cotizar por WhatsApp</a>
+  </div>
+  <div class="chips"><span>Estampado DTF</span><span>Sublimación</span><span>Precios por mayor</span></div>
+</div></header>
+
+<main id="productos"><div class="wrap">
+  <div class="filtros"><button class="filtro activo" data-cat="todos">Todos</button><button class="filtro" data-cat="Camisetas">Camisetas</button><button class="filtro" data-cat="Mugs y vasos">Mugs y vasos</button><button class="filtro" data-cat="Termos y caramañolas">Termos y caramañolas</button><button class="filtro" data-cat="Otros sublimables">Regalos y más</button></div>
+  
+    <section class="categoria" data-cat="Camisetas">
+      <div class="cat-head"><h2>Camisetas</h2><p>Para ti, tu equipo o tu empresa</p></div>
+      <div class="grid">
+      <article class="card" data-cat="Camisetas">
+        <div class="foto"><svg viewBox="0 0 200 205" class="dibujo"><g transform=""><path d="M62 22 L84 12 Q100 30 116 12 L138 22 L186 50 L166 88 L144 76 L144 192 L56 192 L56 76 L34 88 L14 50 Z" fill="#111111" stroke="#cfd6e3" stroke-width="2" stroke-linejoin="round"/><image href="recursos/logo-blanco.png" x="70" y="62" width="60" height="66"/></g></svg><span class="tec dtf">DTF</span></div>
+        <div class="info">
+          <h3>Camiseta adulto</h3>
+          <p class="det">Estampado DTF frente completo</p>
+          <div class="precio">$31.000</div>
+          <p class="mayor">Por mayor (12+): <b>$28.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Camiseta%20adulto%20%28%2431.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Camisetas">
+        <div class="foto"><svg viewBox="0 0 200 205" class="dibujo"><g transform="translate(25 25) scale(0.75)"><path d="M62 22 L84 12 Q100 30 116 12 L138 22 L186 50 L166 88 L144 76 L144 192 L56 192 L56 76 L34 88 L14 50 Z" fill="#ffffff" stroke="#cfd6e3" stroke-width="2" stroke-linejoin="round"/><image href="recursos/logo-negro.png" x="70" y="62" width="60" height="66"/></g></svg><span class="tec dtf">DTF</span></div>
+        <div class="info">
+          <h3>Camiseta niño</h3>
+          <p class="det">Estampado DTF frente</p>
+          <div class="precio">$20.000</div>
+          <p class="mayor">Por mayor (12+): <b>$18.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Camiseta%20ni%C3%B1o%20%28%2420.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Camisetas">
+        <div class="foto"><svg viewBox="0 0 200 205" class="dibujo"><g transform=""><path d="M62 22 L84 12 Q100 30 116 12 L138 22 L186 50 L166 88 L144 76 L144 192 L56 192 L56 76 L34 88 L14 50 Z" fill="#111111" stroke="#cfd6e3" stroke-width="2" stroke-linejoin="round"/><image href="recursos/logo-blanco.png" x="110" y="58" width="24" height="26"/></g></svg><span class="tec dtf">DTF</span></div>
+        <div class="info">
+          <h3>Camiseta logo en pecho</h3>
+          <p class="det">Ideal para uniformes y empresas</p>
+          <div class="precio">$20.000</div>
+          <p class="mayor">Por mayor (12+): <b>$18.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Camiseta%20logo%20en%20pecho%20%28%2420.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Camisetas">
+        <div class="foto"><img src="fotos/camiseta-hombre.webp" alt="Camiseta piel de durazno hombre" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Camiseta piel de durazno hombre</h3>
+          <p class="det">Sublimación a todo color</p>
+          <div class="precio">$24.000</div>
+          <p class="mayor">Por mayor (12+): <b>$22.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Camiseta%20piel%20de%20durazno%20hombre%20%28%2424.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Camisetas">
+        <div class="foto"><img src="fotos/camiseta-dama.webp" alt="Camiseta piel de durazno dama" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Camiseta piel de durazno dama</h3>
+          <p class="det">Sublimación a todo color</p>
+          <div class="precio">$23.000</div>
+          <p class="mayor">Por mayor (12+): <b>$21.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Camiseta%20piel%20de%20durazno%20dama%20%28%2423.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      </div>
+    </section>
+    <section class="categoria" data-cat="Mugs y vasos">
+      <div class="cat-head"><h2>Mugs y vasos</h2><p>El regalo que nunca falla</p></div>
+      <div class="grid">
+      <article class="card" data-cat="Mugs y vasos">
+        <div class="foto"><svg viewBox="0 0 200 200" class="dibujo"><ellipse cx="90" cy="172" rx="62" ry="8" fill="#000" opacity=".08"/><path d="M140 70 q38 0 38 36 q0 36 -38 36" fill="none" stroke="#e6e9ef" stroke-width="14"/><path d="M140 70 q38 0 38 36 q0 36 -38 36" fill="none" stroke="#cfd6e3" stroke-width="2"/><rect x="30" y="40" width="114" height="130" rx="10" fill="#fff" stroke="#cfd6e3" stroke-width="2"/><ellipse cx="87" cy="42" rx="57" ry="7" fill="#eef1f6" stroke="#cfd6e3" stroke-width="2"/><image href="recursos/logo-negro.png" x="58" y="68" width="58" height="64"/></svg><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Mug blanco 11 oz</h3>
+          <p class="det">El clásico para regalar</p>
+          <div class="precio">$14.000</div>
+          <p class="mayor">Por mayor (12+): <b>$13.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Mug%20blanco%2011%20oz%20%28%2414.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Mugs y vasos">
+        <div class="foto"><img src="fotos/mugs-personalizados.webp" alt="Mug color interno 11 oz" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Mug color interno 11 oz</h3>
+          <p class="det">Interior y oreja de color</p>
+          <div class="precio">$19.000</div>
+          <p class="mayor">Por mayor (12+): <b>$18.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Mug%20color%20interno%2011%20oz%20%28%2419.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Mugs y vasos">
+        <div class="foto"><img src="fotos/mug-mickey.webp" alt="Mug oreja Mickey 11 oz" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Mug oreja Mickey 11 oz</h3>
+          <p class="det">Oreja divertida e interior de color</p>
+          <div class="precio">$19.000</div>
+          <p class="mayor">Por mayor (12+): <b>$18.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Mug%20oreja%20Mickey%2011%20oz%20%28%2419.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Mugs y vasos">
+        <div class="foto"><img src="fotos/mug-cuchara.webp" alt="Mug con cuchara 12 oz" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Mug con cuchara 12 oz</h3>
+          <p class="det">Incluye cuchara</p>
+          <div class="precio">$25.000</div>
+          <p class="mayor">Por mayor (12+): <b>$23.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Mug%20con%20cuchara%2012%20oz%20%28%2425.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Mugs y vasos">
+        <div class="foto"><img src="fotos/mug-magico-rojo.webp" alt="Mug mágico rojo 11 oz" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Mug mágico rojo 11 oz</h3>
+          <p class="det">Tu diseño aparece con lo caliente</p>
+          <div class="precio">$21.000</div>
+          <p class="mayor">Por mayor (12+): <b>$19.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Mug%20m%C3%A1gico%20rojo%2011%20oz%20%28%2421.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Mugs y vasos">
+        <div class="foto"><img src="fotos/mug-magico-negro.webp" alt="Mug mágico negro 11 oz" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Mug mágico negro 11 oz</h3>
+          <p class="det">Tu diseño aparece con lo caliente</p>
+          <div class="precio">$25.000</div>
+          <p class="mayor">Por mayor (12+): <b>$23.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Mug%20m%C3%A1gico%20negro%2011%20oz%20%28%2425.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Mugs y vasos">
+        <div class="foto"><img src="fotos/mug-magico-tapa.webp" alt="Mug mágico con tapa y cuchara" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Mug mágico con tapa y cuchara</h3>
+          <p class="det">11 oz · tapa, base y cuchara</p>
+          <div class="precio">$31.000</div>
+          <p class="mayor">Por mayor (12+): <b>$28.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Mug%20m%C3%A1gico%20con%20tapa%20y%20cuchara%20%28%2431.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Mugs y vasos">
+        <div class="foto"><img src="fotos/mug-pareja.webp" alt="Mugs pareja" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Mugs pareja</h3>
+          <p class="det">Para regalar en pareja</p>
+          <div class="precio">$36.000</div>
+          <p class="mayor">Por mayor (12+): <b>$33.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Mugs%20pareja%20%28%2436.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Mugs y vasos">
+        <div class="foto"><img src="fotos/mug-peltre.webp" alt="Mug peltre 21 oz" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Mug peltre 21 oz</h3>
+          <p class="det">Estilo campestre</p>
+          <div class="precio">$40.000</div>
+          <p class="mayor">Por mayor (12+): <b>$36.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Mug%20peltre%2021%20oz%20%28%2440.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Mugs y vasos">
+        <div class="foto"><img src="fotos/copa-tequilera.webp" alt="Copa tequilera 3 oz" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Copa tequilera 3 oz</h3>
+          <p class="det">Vidrio opalizado</p>
+          <div class="precio">$20.000</div>
+          <p class="mayor">Por mayor (12+): <b>$18.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Copa%20tequilera%203%20oz%20%28%2420.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Mugs y vasos">
+        <div class="foto"><img src="fotos/cervecero.webp" alt="Cervecero 16 oz" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Cervecero 16 oz</h3>
+          <p class="det">Vidrio opalizado fondo neón</p>
+          <div class="precio">$28.000</div>
+          <p class="mayor">Por mayor (12+): <b>$26.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Cervecero%2016%20oz%20%28%2428.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      </div>
+    </section>
+    <section class="categoria" data-cat="Termos y caramañolas">
+      <div class="cat-head"><h2>Termos y caramañolas</h2><p>Tu diseño te acompaña a todas partes</p></div>
+      <div class="grid">
+      <article class="card" data-cat="Termos y caramañolas">
+        <div class="foto"><img src="fotos/caramanola-blanca.webp" alt="Caramañola blanca 600 ml" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Caramañola blanca 600 ml</h3>
+          <p class="det">Aluminio con mosquetón</p>
+          <div class="precio">$20.000</div>
+          <p class="mayor">Por mayor (12+): <b>$18.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Carama%C3%B1ola%20blanca%20600%20ml%20%28%2420.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Termos y caramañolas">
+        <div class="foto"><img src="fotos/caramanola-rosca.webp" alt="Caramañola tapa rosca 600 ml" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Caramañola tapa rosca 600 ml</h3>
+          <p class="det">Tapa de color con manija</p>
+          <div class="precio">$29.000</div>
+          <p class="mayor">Por mayor (12+): <b>$27.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Carama%C3%B1ola%20tapa%20rosca%20600%20ml%20%28%2429.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Termos y caramañolas">
+        <div class="foto"><img src="fotos/caramanola-transparente.webp" alt="Caramañola tapa transparente 600 ml" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Caramañola tapa transparente 600 ml</h3>
+          <p class="det">Tapa deportiva</p>
+          <div class="precio">$31.000</div>
+          <p class="mayor">Por mayor (12+): <b>$28.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Carama%C3%B1ola%20tapa%20transparente%20600%20ml%20%28%2431.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Termos y caramañolas">
+        <div class="foto"><img src="fotos/caramanola-magica.webp" alt="Caramañola mágica 600 ml" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Caramañola mágica 600 ml</h3>
+          <p class="det">Tu diseño aparece con lo frío</p>
+          <div class="precio">$32.000</div>
+          <p class="mayor">Por mayor (12+): <b>$29.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Carama%C3%B1ola%20m%C3%A1gica%20600%20ml%20%28%2432.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Termos y caramañolas">
+        <div class="foto"><img src="fotos/termo-digital.webp" alt="Termo digital" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Termo digital</h3>
+          <p class="det">Muestra la temperatura en la tapa</p>
+          <div class="precio">$51.000</div>
+          <p class="mayor">Por mayor (12+): <b>$46.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Termo%20digital%20%28%2451.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Termos y caramañolas">
+        <div class="foto"><img src="fotos/termo-bebe.webp" alt="Termo infantil" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Termo infantil</h3>
+          <p class="det">Para los más pequeños</p>
+          <div class="precio">$53.000</div>
+          <p class="mayor">Por mayor (12+): <b>$48.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Termo%20infantil%20%28%2453.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Termos y caramañolas">
+        <div class="foto"><img src="fotos/termo-25oz.webp" alt="Termo 25 oz con pitillo" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Termo 25 oz con pitillo</h3>
+          <p class="det">Tapa con oreja de color</p>
+          <div class="precio">$69.000</div>
+          <p class="mayor">Por mayor (12+): <b>$63.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Termo%2025%20oz%20con%20pitillo%20%28%2469.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      </div>
+    </section>
+    <section class="categoria" data-cat="Otros sublimables">
+      <div class="cat-head"><h2>Regalos y más</h2><p>Detalles únicos con tus fotos</p></div>
+      <div class="grid">
+      <article class="card" data-cat="Otros sublimables">
+        <div class="foto"><img src="fotos/gorra.webp" alt="Gorra" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Gorra</h3>
+          <p class="det">Frente personalizado</p>
+          <div class="precio">$13.000</div>
+          <p class="mayor">Por mayor (12+): <b>$12.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Gorra%20%28%2413.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Otros sublimables">
+        <div class="foto"><img src="fotos/pad-mouse.webp" alt="Pad mouse" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Pad mouse</h3>
+          <p class="det">19 x 21 cm</p>
+          <div class="precio">$13.000</div>
+          <p class="mayor">Por mayor (12+): <b>$12.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Pad%20mouse%20%28%2413.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Otros sublimables">
+        <div class="foto"><img src="fotos/media.webp" alt="Medias media caña" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Medias media caña</h3>
+          <p class="det">Precio por par</p>
+          <div class="precio">$23.000</div>
+          <p class="mayor">Por mayor (12+): <b>$21.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Medias%20media%20ca%C3%B1a%20%28%2423.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Otros sublimables">
+        <div class="foto"><img src="fotos/poncho.webp" alt="Poncho" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Poncho</h3>
+          <p class="det">Personalizado</p>
+          <div class="precio">$25.000</div>
+          <p class="mayor">Por mayor (12+): <b>$23.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Poncho%20%28%2425.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Otros sublimables">
+        <div class="foto"><img src="fotos/bolsa-papel.webp" alt="Bolsa de regalo" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Bolsa de regalo</h3>
+          <p class="det">Papel sublimable</p>
+          <div class="precio">$17.000</div>
+          <p class="mayor">Por mayor (12+): <b>$16.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Bolsa%20de%20regalo%20%28%2417.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Otros sublimables">
+        <div class="foto"><svg viewBox="0 0 200 200" class="dibujo"><path d="M72 60 q0 -40 28 -40 q28 0 28 40" fill="none" stroke="#cfd6e3" stroke-width="7"/><rect x="40" y="55" width="120" height="135" rx="4" fill="#fff" stroke="#cfd6e3" stroke-width="2"/><image href="recursos/logo-negro.png" x="68" y="85" width="64" height="70"/></svg><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Bolsa tela 30 x 40 cm</h3>
+          <p class="det">Sublimable</p>
+          <div class="precio">$25.000</div>
+          <p class="mayor">Por mayor (12+): <b>$23.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Bolsa%20tela%2030%20x%2040%20cm%20%28%2425.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Otros sublimables">
+        <div class="foto"><img src="fotos/cuelga-puerta.webp" alt="Cuelga puerta" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Cuelga puerta</h3>
+          <p class="det">Madera</p>
+          <div class="precio">$25.000</div>
+          <p class="mayor">Por mayor (12+): <b>$23.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Cuelga%20puerta%20%28%2425.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Otros sublimables">
+        <div class="foto"><img src="fotos/plato.webp" alt="Plato 8"" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Plato 8"</h3>
+          <p class="det">Cerámica, con base</p>
+          <div class="precio">$30.000</div>
+          <p class="mayor">Por mayor (12+): <b>$27.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Plato%208%22%20%28%2430.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Otros sublimables">
+        <div class="foto"><img src="fotos/plato.webp" alt="Plato 10"" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Plato 10"</h3>
+          <p class="det">Cerámica, con base</p>
+          <div class="precio">$33.000</div>
+          <p class="mayor">Por mayor (12+): <b>$30.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Plato%2010%22%20%28%2433.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Otros sublimables">
+        <div class="foto"><img src="fotos/piedra-corazon.webp" alt="Piedra corazón" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Piedra corazón</h3>
+          <p class="det">Foto en piedra, con base</p>
+          <div class="precio">$34.000</div>
+          <p class="mayor">Por mayor (12+): <b>$31.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Piedra%20coraz%C3%B3n%20%28%2434.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Otros sublimables">
+        <div class="foto"><img src="fotos/lampara-flor.webp" alt="Lámpara flor con portarretrato" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Lámpara flor con portarretrato</h3>
+          <p class="det">Rosa en cúpula + foto</p>
+          <div class="precio">$76.000</div>
+          <p class="mayor">Por mayor (12+): <b>$69.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20L%C3%A1mpara%20flor%20con%20portarretrato%20%28%2476.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      <article class="card" data-cat="Otros sublimables">
+        <div class="foto"><img src="fotos/portarretrato-luz.webp" alt="Portarretrato caja de luz" loading="lazy"><span class="tec sub">Sublimación</span></div>
+        <div class="info">
+          <h3>Portarretrato caja de luz</h3>
+          <p class="det">Se ilumina</p>
+          <div class="precio">$81.000</div>
+          <p class="mayor">Por mayor (12+): <b>$73.000</b></p>
+          <a class="btn-pedir" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%3A%20Portarretrato%20caja%20de%20luz%20%28%2481.000%29" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+      </div>
+    </section>
+</div></main>
+
+<section id="pedido"><div class="wrap">
+  <h2 class="titulo">¿Cómo hago mi pedido?</h2>
+  <div class="pasos">
+    <div class="paso"><b>1</b><h3>Elige tu producto</h3><p>Escoge lo que quieres personalizar y toca "Pedir por WhatsApp".</p></div>
+    <div class="paso"><b>2</b><h3>Envíanos tu diseño</h3><p>Tu logo, foto o idea. Si no tienes diseño, te ayudamos.</p></div>
+    <div class="paso"><b>3</b><h3>Lo estampamos y te lo enviamos</h3><p>Desde Bogotá a toda Colombia.</p></div>
+  </div>
+  <div class="acciones" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a class="btn" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%20un%20producto%20personalizado" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3 29l6.5-2c1.9 1 4.1 1.6 6.5 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.3c-2.1 0-4.1-.6-5.8-1.7l-.4-.3-3.9 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.8-1.9-5.9C4.9 9.8 9.9 5 16 5s11.1 4.8 11.1 10.8S22.1 26.3 16 26.3zm6.1-8.1c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.5 0-.6l-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5.1 3.5 1.4 3.5.9 4.1.9.6-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/></svg> Escríbenos al 316 498 9636</a>
+    <a class="btn borde" href="Catalogo-Lions-JLW.pdf" target="_blank">Descargar catálogo PDF</a>
+  </div>
+  <p class="notas">Precios por unidad en pesos colombianos. Incluyen el producto y el estampado de tu diseño en tamaño
+  estándar; diseños más grandes o a doble cara se cotizan aparte. Precio por mayor desde 12 unidades del mismo producto.
+  Envío no incluido. Precios sujetos a cambio sin previo aviso.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <img src="recursos/logo-blanco.png" alt="Lion's JLW">
+  <div>Bogotá · Envíos a toda Colombia</div>
+  <div class="redes">
+    <a href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%20un%20producto%20personalizado" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://www.instagram.com/lions_jlw/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.facebook.com/profile.php?id=61556578700848" target="_blank" rel="noopener">Facebook</a>
+  </div>
+</div></footer>
+
+<a class="flotante" href="https://wa.me/573164989636?text=Hola%20Lion%27s%20JLW%2C%20quiero%20cotizar%20un%20producto%20personalizado" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3 29l6.5-2c1.9 1 4.1 1.6 6.5 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.3c-2.1 0-4.1-.6-5.8-1.7l-.4-.3-3.9 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.8-1.9-5.9C4.9 9.8 9.9 5 16 5s11.1 4.8 11.1 10.8S22.1 26.3 16 26.3zm6.1-8.1c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.5 0-.6l-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5.1 3.5 1.4 3.5.9 4.1.9.6-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/></svg></a>
+
+<script>
+document.querySelectorAll('.filtro').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.filtro').forEach(x => x.classList.toggle('activo', x === b));
+  const c = b.dataset.cat;
+  document.querySelectorAll('.categoria').forEach(s => s.style.display = (c === 'todos' || s.dataset.cat === c) ? '' : 'none');
+  document.getElementById('productos').scrollIntoView({behavior: 'smooth'});
+}));
+</script>
+</body>
+</html>
